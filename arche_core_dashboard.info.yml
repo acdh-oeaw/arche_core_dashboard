@@ -1,0 +1,9 @@
+name: arche_core_dashboard
+type: module
+description: 'ARCHE GUI CORE Dashboard'
+core_version_requirement: ^10
+package: ACDHCH
+configure: arche_core_dashboard.settings_form
+libraries:
+    - arche_core_dashboard/basic-styles
+    

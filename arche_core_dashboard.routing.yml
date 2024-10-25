@@ -1,0 +1,163 @@
+### Dashboard
+dashboard_overview: 
+    path: '/dashboard' 
+    defaults:
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::dashboardOverview'
+    requirements:
+        _permission: 'access content'
+        _access: 'TRUE' 
+    options:
+        no_cache: 'TRUE'    
+
+dashboard_detail_ajax:    
+    path: '/dashboard/{key}' 
+    defaults:
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::dashboardDetailAjax'
+    requirements:
+        _permission: 'access content'
+        _access: 'TRUE' 
+    options:
+        no_cache: 'TRUE'        
+
+dashboard_detail_ajax_api:    
+    path: '/dashboard-detail-api/{key}' 
+    defaults:
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::dashboardDetailAjaxApi'
+    requirements:
+        _permission: 'access content'
+        _access: 'TRUE' 
+    options:
+        no_cache: 'TRUE'           
+        
+dashboard_class_property:    
+    path: '/dashboard-class-property/{property}' 
+    defaults:
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::dashboardClassPropertyDetail'
+    requirements:
+        _permission: 'access content'
+        _access: 'TRUE' 
+    options:
+        no_cache: 'TRUE'
+
+dashboard_format_property:    
+    path: '/dashboard-format-property/{property}' 
+    defaults:
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::dashboardFormatPropertyDetail'
+    requirements:
+        _permission: 'access content'
+        _access: 'TRUE' 
+    options:
+        no_cache: 'TRUE'    
+        
+dashboard_detail_api:    
+    path: '/dashboard-detail-prop-api/{property}' 
+    defaults:
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::dashboardPropertyDetailApi'
+    requirements:
+        _permission: 'access content'
+        _access: 'TRUE' 
+    options:
+        no_cache: 'TRUE'    
+        
+dashboard_dissemination_services:    
+    path: '/dashboard-dissemination-services' 
+    defaults:
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::dashboardDisseminationServicesList'
+    requirements:
+        _permission: 'access content'
+        _access: 'TRUE' 
+    options:
+        no_cache: 'TRUE'    
+        
+dashboard_disserv_list_api:    
+    path: '/dashboard-dissserv-api' 
+    defaults:
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::getDisseminationServiceApi'
+    requirements:
+        _permission: 'access content'
+        _access: 'TRUE'   
+    options:
+        no_cache: 'TRUE'    
+    
+dashboard_dissemination_services_detail:    
+    path: '/dashboard-dissserv-detail/{id}' 
+    defaults:
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::dashboardDisseminationServicesDetail'
+    requirements:
+        _permission: 'access content'
+        _access: 'TRUE'    
+    options:
+        no_cache: 'TRUE'    
+        
+dashboard_disserv_matching_api:    
+    path: '/dashboard-dissserv-matching-api/{id}' 
+    defaults:
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::getDisseminationServiceMatchingResourcesApi'
+    requirements:
+        _permission: 'access content'
+        _access: 'TRUE'     
+    options:
+        no_cache: 'TRUE'   
+        
+dashboard_values_by_property:    
+    path: '/dashboard-values-by-property' 
+    defaults:
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::getValuesByProperty'
+    requirements:
+        _permission: 'access content'
+        _access: 'TRUE' 
+    options:
+        no_cache: 'TRUE'        
+
+dashboard_values_by_property_api:    
+    path: '/dashboard-values-by-property-api/{property}' 
+    defaults:
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::getValuesByPropertyApi'
+    requirements:
+        _permission: 'access content'
+        _access: 'TRUE' 
+    options:
+        no_cache: 'TRUE'
+ 
+dashboard-vbp-detail:    
+    path: '/dashboard-vbp-detail/{params}' 
+    defaults:
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::getValuesByPropertyDetail'
+    requirements:
+        _permission: 'access content'
+        _access: 'TRUE' 
+    options:
+        no_cache: 'TRUE'        
+
+dashboard-vbp-detail-api:    
+    path: '/dashboard-vbp-detail-api/{params}' 
+    defaults:
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::getValuesByPropertyDetailApi'
+    requirements:
+        _permission: 'access content'
+        _access: 'TRUE' 
+    options:
+        no_cache: 'TRUE'         
+        
+        
+dashboard_property:    
+    path: '/dashboard-property/{property}' 
+    defaults:
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::getProperty'
+    requirements:
+        _permission: 'access content'
+        _access: 'TRUE' 
+    options:
+        no_cache: 'TRUE'        
+
+dashboard_property_api:    
+    path: '/dashboard-property-api/{property}' 
+    defaults:
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::getPropertyApi'
+    requirements:
+        _permission: 'access content'
+        _access: 'TRUE' 
+    options:
+        no_cache: 'TRUE'           
+        
+        

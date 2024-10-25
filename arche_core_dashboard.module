@@ -1,0 +1,41 @@
+<?php
+
+function arche_core_dashboard_page_attachments(&$page)
+{
+    // This could in most cases be added in template as well with:
+    $page['#attached']['library'][] = 'arche_dashboard/arche-dashboard-css-and-js';
+}
+
+function arche_core_dashboard_theme($existing, $type, $theme, $path)
+{
+    return [
+        //define the template name
+        'arche-dashboard-table' => [
+            //define the variables
+            'variables' => ['basic' => NULL, 'key' => NULL, 'cols' => NULL, 'detailPageUrl' => NULL]
+        ],
+        'arche-dashboard-overview' => [
+            'variables' => ['basic' => NULL]
+        ],
+        'arche-dashboard-disserv-table' => [
+            'variables' => ['basic' => NULL]
+        ],
+        'arche-dashboard-disserv-detail' => [
+            'variables' => ['data' => NULL]
+        ],
+        'arche-dashboard-values-by-property' => [
+            'variables' => ['data' => NULL, 'rdftype' => NULL]
+        ],
+        'arche-dashboard-values-by-property-detail' => [
+            'variables' => ['params' => NULL]
+        ],
+        'arche-dashboard-property' => [
+            'variables' => ['data' => NULL, 'property' => NULL, 'propertyTitle' => NULL]
+        ],
+        'arche-dashboard-ajax' => [
+            'variables' => ['data' => NULL, 'property' => NULL,  'key' => NULL, 'cols' => NULL, 'detailPageUrl' => NULL]
+        ]
+        
+    ];
+}
+

@@ -1,0 +1,55 @@
+
+{% set array = {
+  'properties': [
+    {name: 'Property', width: '70%'},
+    {name: 'Count', width: '30%'},
+  ],
+  'classes': [
+    {name: 'Class', width: '70%'},
+    {name: 'Count', width: '30%'},
+  ],
+  'classesproperties': [
+    {name: 'Class', width: '40%'},
+    {name: 'Property', width: '30%'},
+    {name: 'Count Distinct Value', width: '15%'},
+    {name: 'Count', width: '15%'}
+  ],
+'topcollections': [
+    {name: 'Id', width: '10%'},
+    {name: 'Title', width: '30%'},
+    {name: 'Count', width: '10%'},
+    {name: 'Max.Relatives', width: '15%'},
+    {name: 'Sum.Size', width: '15%'},
+    {name: 'Sum.BinarySize', width: '15%'}
+  ],
+'formats': [
+    {name: 'Format', width: '40%'},
+    {name: 'Count Format', width: '20%'},
+    {name: 'Count Raw BinarySize', width: '20%'},
+    {name: 'Sum.Size', width: '20%'},
+  ],
+'formatspercollection': [
+    {name: 'Id', width: '10%'},
+    {name: 'Title', width: '30%'},
+    {name: 'Type', width: '20%'},
+    {name: 'Format', width: '10%'},
+    {name: 'Count', width: '15%'},
+    {name: 'Sum.Size', width: '15%'}
+  ]
+}
+%}
+
+<thead>
+    <tr>
+        {% for item in array[key] %}
+            <th width="{{ item.width }}">{{ item.name|trans }}</th>
+            {% endfor %}
+    </tr>
+</thead>
+<tfoot>
+    <tr>
+        {% for item in array[key] %}
+            <th width="{{ item.width }}">{{ item.name|trans }}</th>
+        {% endfor %}
+    </tr>
+</tfoot>

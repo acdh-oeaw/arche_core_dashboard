@@ -1,0 +1,29 @@
+
+{% set module_path = _self|split('/templates') %}
+{{ include(module_path[0] ~ '/templates/helper/helper-menu-button.html.twig' ) }}
+
+<h3>{{ "Dissemination Services"|trans }}</h3>
+<div class="mb-3">
+    <div class="dashboard-description alert alert-secondary" role="alert">
+        {{ "The list of the Dissemination Services, with some additional info about their formats, location and return type. 
+        The list also contains a count about the number of resources which are using the actual dissemination service."|trans}}
+    </div>
+</div>
+<table id="dissserv-table" class="table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th></th>
+            <th>{{ "Uri"|trans }}</th>
+            <th>{{ "Dissemination service"|trans }}</th>
+            <th>{{ "Count"|trans }}</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th></th>
+            <th>{{ "Uri"|trans }}</th>
+            <th>{{ "Dissemination service"|trans }}</th>
+            <th>{{ "Count"|trans }}</th>
+        </tr>
+    </tfoot>
+</table>

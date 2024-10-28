@@ -2,7 +2,7 @@
 dashboard_overview: 
     path: '/dashboard' 
     defaults:
-        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::dashboardOverview'
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardCoreController::dashboardOverview'
     requirements:
         _permission: 'access content'
         _access: 'TRUE' 
@@ -12,7 +12,7 @@ dashboard_overview:
 dashboard_detail_ajax:    
     path: '/dashboard/{key}' 
     defaults:
-        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::dashboardDetailAjax'
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardCoreController::dashboardDetailAjax'
     requirements:
         _permission: 'access content'
         _access: 'TRUE' 
@@ -22,7 +22,7 @@ dashboard_detail_ajax:
 dashboard_detail_ajax_api:    
     path: '/dashboard-detail-api/{key}' 
     defaults:
-        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::dashboardDetailAjaxApi'
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardCoreController::dashboardDetailAjaxApi'
     requirements:
         _permission: 'access content'
         _access: 'TRUE' 
@@ -32,7 +32,7 @@ dashboard_detail_ajax_api:
 dashboard_class_property:    
     path: '/dashboard-class-property/{property}' 
     defaults:
-        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::dashboardClassPropertyDetail'
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardCoreController::dashboardClassPropertyDetail'
     requirements:
         _permission: 'access content'
         _access: 'TRUE' 
@@ -42,7 +42,7 @@ dashboard_class_property:
 dashboard_format_property:    
     path: '/dashboard-format-property/{property}' 
     defaults:
-        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::dashboardFormatPropertyDetail'
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardCoreController::dashboardFormatPropertyDetail'
     requirements:
         _permission: 'access content'
         _access: 'TRUE' 
@@ -52,7 +52,7 @@ dashboard_format_property:
 dashboard_detail_api:    
     path: '/dashboard-detail-prop-api/{property}' 
     defaults:
-        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::dashboardPropertyDetailApi'
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardCoreController::dashboardPropertyDetailApi'
     requirements:
         _permission: 'access content'
         _access: 'TRUE' 
@@ -62,7 +62,7 @@ dashboard_detail_api:
 dashboard_dissemination_services:    
     path: '/dashboard-dissemination-services' 
     defaults:
-        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::dashboardDisseminationServicesList'
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardCoreController::dashboardDisseminationServicesList'
     requirements:
         _permission: 'access content'
         _access: 'TRUE' 
@@ -72,7 +72,7 @@ dashboard_dissemination_services:
 dashboard_disserv_list_api:    
     path: '/dashboard-dissserv-api' 
     defaults:
-        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::getDisseminationServiceApi'
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardCoreController::getDisseminationServiceApi'
     requirements:
         _permission: 'access content'
         _access: 'TRUE'   
@@ -82,7 +82,7 @@ dashboard_disserv_list_api:
 dashboard_dissemination_services_detail:    
     path: '/dashboard-dissserv-detail/{id}' 
     defaults:
-        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::dashboardDisseminationServicesDetail'
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardCoreController::dashboardDisseminationServicesDetail'
     requirements:
         _permission: 'access content'
         _access: 'TRUE'    
@@ -92,7 +92,7 @@ dashboard_dissemination_services_detail:
 dashboard_disserv_matching_api:    
     path: '/dashboard-dissserv-matching-api/{id}' 
     defaults:
-        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::getDisseminationServiceMatchingResourcesApi'
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardCoreController::getDisseminationServiceMatchingResourcesApi'
     requirements:
         _permission: 'access content'
         _access: 'TRUE'     
@@ -102,7 +102,7 @@ dashboard_disserv_matching_api:
 dashboard_values_by_property:    
     path: '/dashboard-values-by-property' 
     defaults:
-        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::getValuesByProperty'
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardCoreController::getValuesByProperty'
     requirements:
         _permission: 'access content'
         _access: 'TRUE' 
@@ -112,7 +112,7 @@ dashboard_values_by_property:
 dashboard_values_by_property_api:    
     path: '/dashboard-values-by-property-api/{property}' 
     defaults:
-        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::getValuesByPropertyApi'
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardCoreController::getValuesByPropertyApi'
     requirements:
         _permission: 'access content'
         _access: 'TRUE' 
@@ -122,7 +122,7 @@ dashboard_values_by_property_api:
 dashboard-vbp-detail:    
     path: '/dashboard-vbp-detail/{params}' 
     defaults:
-        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::getValuesByPropertyDetail'
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardCoreController::getValuesByPropertyDetail'
     requirements:
         _permission: 'access content'
         _access: 'TRUE' 
@@ -132,7 +132,7 @@ dashboard-vbp-detail:
 dashboard-vbp-detail-api:    
     path: '/dashboard-vbp-detail-api/{params}' 
     defaults:
-        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::getValuesByPropertyDetailApi'
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardCoreController::getValuesByPropertyDetailApi'
     requirements:
         _permission: 'access content'
         _access: 'TRUE' 
@@ -143,7 +143,7 @@ dashboard-vbp-detail-api:
 dashboard_property:    
     path: '/dashboard-property/{property}' 
     defaults:
-        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::getProperty'
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardCoreController::getProperty'
     requirements:
         _permission: 'access content'
         _access: 'TRUE' 
@@ -153,7 +153,7 @@ dashboard_property:
 dashboard_property_api:    
     path: '/dashboard-property-api/{property}' 
     defaults:
-        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardController::getPropertyApi'
+        _controller: '\Drupal\arche_core_dashboard\Controller\DashboardCoreController::getPropertyApi'
     requirements:
         _permission: 'access content'
         _access: 'TRUE' 

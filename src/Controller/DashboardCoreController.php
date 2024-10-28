@@ -6,7 +6,7 @@ use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
-class DashboardCoreController extends ControllerBase
+class DashboardCoreController extends \Drupal\arche_core_gui\Controller\ArcheBaseController 
 {
     private $data = array();
     private $repo;

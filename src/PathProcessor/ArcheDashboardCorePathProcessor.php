@@ -5,7 +5,7 @@ namespace Drupal\arche_core_dashboard\PathProcessor;
 use Drupal\Core\PathProcessor\InboundPathProcessorInterface;
 use Symfony\Component\HttpFoundation\Request;
 
-class ArcheDashboardCorePathProcessor implements InboundPathProcessorInterface
+class ArcheDashboardCorePathProcessor implements \Drupal\Core\PathProcessor\InboundPathProcessorInterface
 {
     public function processInbound($path, Request $request)
     {

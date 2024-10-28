@@ -68,9 +68,9 @@ trait DisseminationServiceTrait
         $this->dissServices = iterator_to_array($this->repo->getResourcesBySearchTerms([$this->searchTerm], $this->searchCfg));
     }
 
-    private function createDissServObj(\acdhOeaw\arche\lib\disserv\dissemination\Service &$d, array $params): \Drupal\arche_dashboard\Object\DisseminationService
+    private function createDissServObj(\acdhOeaw\arche\lib\disserv\dissemination\Service &$d, array $params): \Drupal\arche_core_dashboard\Object\DisseminationService
     {
-        $obj = new \Drupal\arche_dashboard\Object\DisseminationService($d, $params, $this->repo->getSchema());
+        $obj = new \Drupal\arche_core_dashboard\Object\DisseminationService($d, $params, $this->repo->getSchema());
         $obj->setValues($this->repodb->getSchema());
         return $obj;
     }

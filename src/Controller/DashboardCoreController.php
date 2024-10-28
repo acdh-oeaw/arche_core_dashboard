@@ -10,17 +10,16 @@ class DashboardCoreController extends \Drupal\arche_core_gui\Controller\ArcheBas
 {
     private $data = array();
     private $repo;
-    private $model;
-    private $helper;
+    protected $model;
+    protected $helper;
     private static $cacheTypes = ['formatspercollection'];
 
     public function __construct()
     {
-        $this->config = drupal_get_path('module', 'arche_core_gui') . '/config/config.yaml';
-        $this->repo = \acdhOeaw\arche\lib\Repo::factory($this->config);
+        parent::__construct();
         //setup the dashboard model class
-        $this->model = new \Drupal\arche_dashboard\Model\DashboardModel();
-        $this->helper = new \Drupal\arche_dashboard\Helper\DashboardHelper();
+        $this->model = new \Drupal\arche_core_dashboard\Model\DashboardCoreModel();
+        $this->helper = new \Drupal\arche_core_dashboard\Helper\DashboardCoreHelper();
     }
     
     /**
@@ -208,7 +207,7 @@ class DashboardCoreController extends \Drupal\arche_core_gui\Controller\ArcheBas
      */
     public function dashboardDisseminationServicesList()
     {
-        $disservHelper = new \Drupal\arche_dashboard\Helper\DisseminationServiceHelper();
+        $disservHelper = new \Drupal\arche_core_dashboard\Helper\DisseminationServiceHelper();
         $data = $disservHelper->getDissServices();
         return [
             '#theme' => 'arche-dashboard-disserv-table',
@@ -224,7 +223,7 @@ class DashboardCoreController extends \Drupal\arche_core_gui\Controller\ArcheBas
     {
         $data = array();
 
-        $disservHelper = new \Drupal\arche_dashboard\Helper\DisseminationServiceHelper();
+        $disservHelper = new \Drupal\arche_core_dashboard\Helper\DisseminationServiceHelper();
         $data = $disservHelper->getDissServices();
         
         $response = new Response();
@@ -240,7 +239,7 @@ class DashboardCoreController extends \Drupal\arche_core_gui\Controller\ArcheBas
      */
     public function dashboardDisseminationServicesDetail(string $id)
     {
-        $disservHelper = new \Drupal\arche_dashboard\Helper\DisseminationServiceHelper();
+        $disservHelper = new \Drupal\arche_core_dashboard\Helper\DisseminationServiceHelper();
         $data = $disservHelper->getDissServResourcesById((int)$id);
       
         return [
@@ -264,7 +263,7 @@ class DashboardCoreController extends \Drupal\arche_core_gui\Controller\ArcheBas
         $draw = (empty($_POST['draw'])) ? 0 : $_POST['draw'];
         
         $data = array();
-        $disservHelper = new \Drupal\arche_dashboard\Helper\DisseminationServiceHelper();
+        $disservHelper = new \Drupal\arche_core_dashboard\Helper\DisseminationServiceHelper();
         $data = $disservHelper->getDissServResourcesById((int)$id);
         $matching = $data->getMatchingResources((int)$limit, (int)$offset);
        

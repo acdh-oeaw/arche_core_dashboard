@@ -2,7 +2,7 @@
     "name": "acdh-oeaw/arche-core-dashboard",
     "description": "Drupal module to ACDHCH ARCHE repository",
     "type": "drupal-module",
-    "homepage": "https://github.com/acdh-oeaw/arche-dashboard",
+    "homepage": "https://github.com/acdh-oeaw/arche_core_dashboard",
     "license": "MIT",
     "authors": [
         {

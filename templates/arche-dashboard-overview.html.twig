@@ -1,24 +1,31 @@
-<h1>Dashboard</h1>
-<div class="mb-3">
-    <div class="dashboard-description alert alert-secondary" role="alert">
-        {{ "Every entity in ARCHE is enriched with metadata that allow for the resources to be discovered and understood and are thus an essential part of complying with the FAIR Data Principles, to make data Findable, Accessible, Interoperable, and Reusable"|trans}} <a href="https://arche.acdh.oeaw.ac.at/browser/faq">{{ "(see FAQ)."|trans}}</a>
-        <br/><br/>
-        {{ "The metadata in ARCHE follow the ARCHE schema. The complete ARCHE schema along with the documentation and annotations is available in an"|trans }} <a href="https://euc-word-edit.officeapps.live.com/we/%5d(https:/github.com/acdh-oeaw/arche-schema">{{ "OWL-format"|trans}} {{ "and is also represented in a tabular form"|trans}} <a href="https://euc-word-edit.officeapps.live.com/we/(https:/teiminator.acdh.oeaw.ac.at/services/owl2html.xql?owl=https%3A%2F%2Fraw.githubusercontent.com%2Facdh-oeaw%2Frepo-schema%2Fmaster%2Facdh-schema.owl&format=table">{{ "here"|trans }}</a> {{ "and"|trans }} <a href="https://teiminator.acdh.oeaw.ac.at/services/owl2html.xql?owl=https%3A%2F%2Fraw.githubusercontent.com%2Facdh-oeaw%2Frepo-schema%2Fmaster%2Facdh-schema.owl">{{ "here"|trans }}</a>. {{ "A tabular overview of properties per Project, Collection and Resource is available also in the"|trans }} <a href="https://arche.acdh.oeaw.ac.at/browser/formats-filenames-and-metadata#metadata">{{ "Metadata requirements"|trans }}</a> {{ "for depositing in ARCHE."|trans}}
-        <br/><br/>
-        {{ "This dashboard provides basic statistics about metadata used to describe entities in ARCHE and therefore allows for further exploration of data deposited to ARCHE. The dashboard is divided into tables listed below. Each table includes information about the count and size of a specific item (property, class, file format, dissemination service) for all entities deposited in ARCHE or per the main (top) collection. (hover over the table name for a more detailed description)."|trans}}
-    </div>
-</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 mb-3">
+            <h1>Dashboard</h1>
+            <div class="dashboard-description alert alert-secondary" role="alert">
+                {{ "Every entity in ARCHE is enriched with metadata that allow for the resources to be discovered and understood and are thus an essential part of complying with the FAIR Data Principles, to make data Findable, Accessible, Interoperable, and Reusable"|trans}} <a href="https://arche.acdh.oeaw.ac.at/browser/faq">{{ "(see FAQ)."|trans}}</a>
+                <br/><br/>
+                {{ "The metadata in ARCHE follow the ARCHE schema. The complete ARCHE schema along with the documentation and annotations is available in an"|trans }} <a href="https://euc-word-edit.officeapps.live.com/we/%5d(https:/github.com/acdh-oeaw/arche-schema">{{ "OWL-format"|trans}} {{ "and is also represented in a tabular form"|trans}} <a href="https://euc-word-edit.officeapps.live.com/we/(https:/teiminator.acdh.oeaw.ac.at/services/owl2html.xql?owl=https%3A%2F%2Fraw.githubusercontent.com%2Facdh-oeaw%2Frepo-schema%2Fmaster%2Facdh-schema.owl&format=table">{{ "here"|trans }}</a> {{ "and"|trans }} <a href="https://teiminator.acdh.oeaw.ac.at/services/owl2html.xql?owl=https%3A%2F%2Fraw.githubusercontent.com%2Facdh-oeaw%2Frepo-schema%2Fmaster%2Facdh-schema.owl">{{ "here"|trans }}</a>. {{ "A tabular overview of properties per Project, Collection and Resource is available also in the"|trans }} <a href="https://arche.acdh.oeaw.ac.at/browser/formats-filenames-and-metadata#metadata">{{ "Metadata requirements"|trans }}</a> {{ "for depositing in ARCHE."|trans}}
+                    <br/><br/>
+                    {{ "This dashboard provides basic statistics about metadata used to describe entities in ARCHE and therefore allows for further exploration of data deposited to ARCHE. The dashboard is divided into tables listed below. Each table includes information about the count and size of a specific item (property, class, file format, dissemination service) for all entities deposited in ARCHE or per the main (top) collection. (hover over the table name for a more detailed description)."|trans}}
+            </div>
+        </div>
 
         <b>{{ "The following tables are available:"|trans}}</b>
-<br/>
+        <br/>
 
-<ul>
-    <li><a href="/browser/dashboard/properties" data-toggle="tooltip" title="{{ "Properties table indicates the count of how many times a property has been used across all entities in ARCHE. To see its instances, simply click on the property of interest. Each instance is a link to the ARCHE entry."|trans }}">Properties</a></li>
-    <li><a href="/browser/dashboard/classes" data-toggle="tooltip" title="{{ "Classes table specifies the count of how many times a Class has been used across all entities in ARCHE. To see its instances, simply click on the class of interest. Each instance is a link to the ARCHE entry."|trans }}">Classes</a></li>
-    <li><a href="/browser/dashboard/classesproperties" data-toggle="tooltip" title="{{ "Classes properties table lists the count of each property per class. One may also distinguish between the count of the distinct value and the total count a property has been used within a certain class. To see the instances of the properties, click on the one of interest."|trans }}">Classes properties</a></li>
-    <li><a href="/browser/dashboard/topcollections" data-toggle="tooltip" title="{{ "Top collections table lists all main Collections deposited to ARCHE and provides information about the number of items of a particular collection and their size (expressed in bytes)."|trans }}">Top collections</a></li>
-    <li><a href="/browser/dashboard/formats" data-toggle="tooltip" title="{{ "Formats table lists the count of formats of all resources deposited to ARCHE. The table provides also information on the total size (expressed in bytes) of resources per file format. To see the objects of a particular file format, simply click on it."|trans }}">Formats</a></li>
-    <li><a href="/browser/dashboard/formatspercollection" data-toggle="tooltip" title="{{ "Formats per collection similarly to the “Formats” table, 'Formats per collection'  provides information about the count of file formats of resources and their size (expressed in bytes), but for every main (top) collection separately. Additional information about the type of the object (Top collection/Collection/Resource) is also listed."|trans }}">Formats per top collection</a></li>
-    <li><a href="/browser/dashboard-dissemination-services" data-toggle="tooltip" title="{{ "Dissemination services list provides a list of dissemination services and their count provided in ARCHE. Each dissemination service link provides more detail about the service itself as well as a list of items for which the particular dissemination service is provided."|trans }}">Dissemination services list</a></li>
-    <li><a href="/browser/dashboard-values-by-property" data-toggle="tooltip" title="{{ "Summarize values by property for the given RDF type"|trans }}">Summarize values by property for the given RDF Type</a></li>
-</ul>
+        <ul>
+            <li><a href="/browser/dashboard/properties" data-toggle="tooltip" title="{{ "Properties table indicates the count of how many times a property has been used across all entities in ARCHE. To see its instances, simply click on the property of interest. Each instance is a link to the ARCHE entry."|trans }}">Properties - sql</a></li>
+            <li><a href="/browser/dashboard/classes" data-toggle="tooltip" title="{{ "Classes table specifies the count of how many times a Class has been used across all entities in ARCHE. To see its instances, simply click on the class of interest. Each instance is a link to the ARCHE entry."|trans }}">Classes</a></li>
+            <li><a href="/browser/dashboard/classesproperties" data-toggle="tooltip" title="{{ "Classes properties table lists the count of each property per class. One may also distinguish between the count of the distinct value and the total count a property has been used within a certain class. To see the instances of the properties, click on the one of interest."|trans }}">Classes properties - sql</a></li>
+            <li><a href="/browser/dashboard/topcollections" data-toggle="tooltip" title="{{ "Top collections table lists all main Collections deposited to ARCHE and provides information about the number of items of a particular collection and their size (expressed in bytes)."|trans }}">Top collections</a></li>
+            <li><a href="/browser/dashboard/formats" data-toggle="tooltip" title="{{ "Formats table lists the count of formats of all resources deposited to ARCHE. The table provides also information on the total size (expressed in bytes) of resources per file format. To see the objects of a particular file format, simply click on it."|trans }}">Formats</a></li>
+            <li><a href="/browser/dashboard/formatspercollection" data-toggle="tooltip" title="{{ "Formats per collection similarly to the “Formats” table, 'Formats per collection'  provides information about the count of file formats of resources and their size (expressed in bytes), but for every main (top) collection separately. Additional information about the type of the object (Top collection/Collection/Resource) is also listed."|trans }}">Formats per top collection</a></li>
+            <li><a href="/browser/dashboard-dissemination-services" data-toggle="tooltip" title="{{ "Dissemination services list provides a list of dissemination services and their count provided in ARCHE. Each dissemination service link provides more detail about the service itself as well as a list of items for which the particular dissemination service is provided."|trans }}">Dissemination services list</a></li>
+            <li><a href="/browser/dashboard-values-by-property" data-toggle="tooltip" title="{{ "Summarize values by property for the given RDF type"|trans }}">Summarize values by property for the given RDF Type - sql</a></li>
+        </ul>
+
+    </div>
+
+</div>

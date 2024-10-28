@@ -1,6 +1,6 @@
 arche-core-dashboard-css-and-js:
   css:
-    theme:
+    base:
       css/arche-core-dashboard.css: {}
       css/dataTables.bootstrap4.min.css: {}
   js:

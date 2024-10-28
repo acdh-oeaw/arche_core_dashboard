@@ -309,7 +309,7 @@ class DisseminationService
     {
         $query = $this->obj::getMatchQuery($this->getId(), \acdhOeaw\arche\lib\disserv\dissemination\ServiceInterface::QUERY_RES, $schema);
         $query->query = "SELECT count(*) FROM ($query->query) t";
-        $db = new \Drupal\arche_dashboard\Model\DashboardModel();
+        $db = new \Drupal\arche_core_dashboard\Model\DashboardModel();
         $this->setCount($db->countAllMatchingResourcesForDisseminationService($query));
     }
 

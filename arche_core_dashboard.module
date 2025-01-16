@@ -3,7 +3,7 @@
 function arche_core_dashboard_page_attachments(&$page)
 {
     // This could in most cases be added in template as well with:
-    $page['#attached']['library'][] = 'arche_dashboard/arche-dashboard-css-and-js';
+    $page['#attached']['library'][] = 'arche_core_dashboard/arche-dashboard-css-and-js';
 }
 
 function arche_core_dashboard_theme($existing, $type, $theme, $path)
@@ -34,7 +34,8 @@ function arche_core_dashboard_theme($existing, $type, $theme, $path)
         ],
         'arche-dashboard-ajax' => [
             'variables' => ['data' => NULL, 'property' => NULL,  'key' => NULL, 'cols' => NULL, 'detailPageUrl' => NULL]
-        ]
+        ],
+       
         
     ];
 }

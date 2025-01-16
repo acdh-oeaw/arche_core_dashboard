@@ -14,14 +14,15 @@ class DashboardCoreHelper
 {
     private $tableInfo = [
         'properties' => [
-            'property' => ['name' => 'property' ],
-            'count' => ['name' => 'count' ],
+            'property',
+            'count',
         ],
         'classesproperties' => [
             'class',
             'property',
             'cnt_distinct_value',
-            'cnt'
+            'cnt', 
+            'sumcount'
         ],
         'classes' => [
             'class',
@@ -78,9 +79,10 @@ class DashboardCoreHelper
      */
     public function addUrlToTableData(array $data, string $key = "properties"): array
     {
-        $keys = array_keys((array)$data[0]);
-
+        //$keys = array_keys((array)$data[0]);
+        $tableData = [];
         if (isset($this->tableInfo[$key])) {
+           
             for ($i = 0; $i < count($data); $i++) {
                 $id = "";
                 if (isset($data[$i]->id)) {
@@ -88,49 +90,60 @@ class DashboardCoreHelper
                 }
                 
                 foreach ($data[$i] as $k => $v) {
+                   
                     $fv = str_replace('#', '%23', $v);
                     if ($k == "property") {
-                        $data[$i]->{$k} = '<a href="/browser/dashboard-property/'.$fv.'">'.$v.'</a>';
+                        $tableData[$i][$k] = '<a href="/browser/dashboard-property/'.$fv.'">'.$v.'</a>';
+                    }
+                    
+                     if ($k == "sumcount") {
+                        $tableData[$i][$k] = $v;
                     }
 
                     if ($k == "format") {
-                        $data[$i]->{$k} = '<a href="/browser/dashboard-format-property/'.$fv.'">'.$v.'</a>';
+                        $tableData[$i][$k] = '<a href="/browser/dashboard-format-property/'.$fv.'">'.$v.'</a>';
                     }
                     
                     if ($k == "class") {
-                        $data[$i]->{$k} = '<a href="/browser/dashboard-class-property/'.$fv.'">'.$v.'</a>';
+                        $tableData[$i][$k] = '<a href="/browser/dashboard-class-property/'.$fv.'">'.$v.'</a>';
                     }
                     
                     if ($k == "format") {
-                        $data[$i]->{$k} = '<a href="/browser/dashboard-format-property/'.$fv.'">'.$v.'</a>';
+                        $tableData[$i][$k] = '<a href="/browser/dashboard-format-property/'.$fv.'">'.$v.'</a>';
                     }
                     if ($k == "title" && !empty($id)) {
-                        $data[$i]->{$k} = '<a href="/browser/oeaw_detail/'.$id.'">'.$v.'</a>';
+                        $tableData[$i][$k] = '<a href="/browser/oeaw_detail/'.$id.'">'.$v.'</a>';
                     }
                     if ($k == "id") {
-                        $data[$i]->{$k} = '<a href="/browser/oeaw_detail/'.$v.'">'.$v.'</a>';
+                        $tableData[$i][$k] = '<a href="/browser/oeaw_detail/'.$v.'">'.$v.'</a>';
                     }
                    
                     if (($k == 'count' || $k == 'cnt') && isset($data[$i]->type) && $data[$i]->type == "REL") {
-                        $data[$i]->{$k} = '<a href="#" id="getAttributesView" data-property="'.$k.'" data-value="'.$k.'">'.$v.'</a>';
+                        $tableData[$i][$k] = '<a href="#" id="getAttributesView" data-property="'.$k.'" data-value="'.$k.'">'.$v.'</a>';
+                    } elseif (($k == 'count' || $k == 'cnt')) {
+                         $tableData[$i][$k] = $v;
+                    }
+                    
+                    if($k == 'cnt_distinct_value') {
+                         $tableData[$i][$k] = $v;
                     }
                     
                     if ($k == "sum_size" && $v != null) {
-                        $data[$i]->{$k} = $this->formatNumberToGuiFriendlyFormat($v);
+                        $tableData[$i][$k] = $this->formatNumberToGuiFriendlyFormat($v);
                     }
                     
                     if ($k == "binary_size"  && $v != null) {
-                        $data[$i]->{$k} = $this->formatNumberToGuiFriendlyFormat($v);
+                        $tableData[$i][$k] = $this->formatNumberToGuiFriendlyFormat($v);
                     }
                     
                     if ($k == "count_rawbinarysize"  && $v != null) {
-                        $data[$i]->{$k} = $this->formatNumberToGuiFriendlyFormat($v);
+                        $tableData[$i][$k] = $this->formatNumberToGuiFriendlyFormat($v);
                     }
                 }
             }
         }
-        
-        return $data;
+       
+        return $tableData;
     }
     
     

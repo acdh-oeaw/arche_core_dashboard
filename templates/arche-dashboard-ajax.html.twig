@@ -1,17 +1,30 @@
 {% set module_path = _self|split('/templates') %}
-{{ include(module_path[0] ~ '/templates/helper/helper-menu-button.html.twig' ) }}
 
-<input type="hidden" name="dashboard-detail-ajax-key" id="dashboard-detail-ajax-key" value="{{ key }}"/>
-<br><br>
-<div class="mb-3">
-    <div class="dashboard-description alert alert-secondary" role="alert">
-        {{ include('/modules/contrib/arche_core_dashboard/templates/helper/helper-descriptions.html.twig', {'key': key } ) }}
+<div class="container">
+    <div class="row basic-content-div discover-content-main">
+        {{ include(module_path[0] ~ '/templates/helper/helper-menu-button.html.twig' ) }}
+        <input type="hidden" name="dashboard-detail-ajax-key" id="dashboard-detail-ajax-key" value="{{ key }}"/>
+        <br><br>
+        <div class="mb-3">
+            <div class="dashboard-description alert alert-secondary" role="alert">
+                {{ include('/modules/contrib/arche_core_dashboard/templates/helper/helper-descriptions.html.twig', {'key': key } ) }}
+            </div>
+        </div>
+
+        {{ include(module_path[0] ~ '/templates/helper/helper-title.html.twig', {'title': key } ) }}
+
+         <!--<table class="publications-table table row-border" cellspacing="0" width="100%" id='dashboard-detail-ajax'>
+                                    <thead>
+                                        <tr>
+                                            <th>{{ "Citation"|trans }} / {{ "Title"|trans }}</th>
+                                            <th>{{ "Relation Type"|trans }}</th>
+                                            <th>{{ "Relation Type"|trans }}</th>
+                                        </tr>
+                                    </thead>
+                                </table>-->
+        <table id="dashboard-detail-ajax" class="table-striped" style="width:100%">
+            {{ include('/modules/contrib/arche_core_dashboard/templates/arche-dashboard-detail-table-ajax-header.html.twig', {'key': key } ) }}
+        </table>
     </div>
 </div>
-
-{{ include(module_path[0] ~ '/templates/helper/helper-title.html.twig', {'title': key } ) }}
-
-<table id="dashboard-detail-ajax" class="table-striped" style="width:100%">
-    {{ include('/modules/contrib/arche_core_dashboard/templates/arche-dashboard-detail-table-ajax-header.html.twig', {'key': key } ) }}
-</table>
 

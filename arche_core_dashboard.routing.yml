@@ -27,7 +27,16 @@ dashboard_detail_ajax_api:
         _permission: 'access content'
         _access: 'TRUE' 
     options:
-        no_cache: 'TRUE'           
+        no_cache: 'TRUE'     
+
+
+
+
+
+
+
+
+      
         
 dashboard_class_property:    
     path: '/dashboard-class-property/{property}' 

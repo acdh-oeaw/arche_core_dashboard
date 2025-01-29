@@ -276,10 +276,15 @@ class DashboardCoreController extends \Drupal\arche_core_gui\Controller\ArcheBas
      */
     public function getValuesByProperty(): array {
         $data = $this->model->getValuesByProperty();
+        echo "<pre>";
+        var_dump($data);
+        echo "</pre>";
+
+        die();
         $data = $this->helper->generatePropertyUrl($data);
         $rdftype = $this->model->getAcdhTypes();
         $rdftype = $this->helper->generatePropertyUrl($rdftype, "value");
-
+        
         return [
             '#theme' => 'arche-dashboard-values-by-property',
             '#data' => $data,
